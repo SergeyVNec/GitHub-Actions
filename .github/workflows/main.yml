@@ -11,5 +11,24 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '17'
+          
       - name: Show Java version
         run: java -version
+        
+      - name: Get files from GitHub repositories
+        uses: actions/checkout@v4
+        
+      - name: Show directory
+        run: pwd
+
+      - name: List files
+        run: ls -la
+
+      - name: Install Dependisies
+        run: mvn compile
+
+      - name: Build Application
+        run: mvn package -DskipTests
+
+      - name: Test Application
+        run: mvn test
