@@ -1,0 +1,15 @@
+name: SoftServe Home Work
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  First-Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Java
+        uses: action/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+      - name: Show Java version
+        run: java -version
